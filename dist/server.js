@@ -1,11 +1,15 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const app = express_1.default();
+
+require("./controllers/UserController");
+
+var _express = _interopRequireDefault(require("express"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const app = (0, _express.default)();
 app.use('/', (req, res) => {
-    return res.json({ menssage: "Hello Word!" });
+  return res.json({
+    menssage: 'Hello Word!'
+  });
 });
 app.listen(3000, () => console.log("Server...."));
